@@ -65,4 +65,4 @@ docker restart lnmp
 
 ## 四、访问 lnmp
 
-- 访问地址：http://localhost:1808
+- 访问地址：http://localhost:5880
