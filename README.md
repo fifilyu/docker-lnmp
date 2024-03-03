@@ -20,7 +20,8 @@ docker buildx build -t fifilyu/lnmp:latest .
 ### 3.1 预先准备开放权限的数据和日志目录
 
 ```bash
-sudo mkdir -p /data/docker/volume/lnmp/var/log/{mysql,nginx,php-fpm} /data/docker/volume/lnmp/var/lib/mysql /data/docker/volume/lnmp/data/web /data/docker/volume/lnmp/var/lock/docker
+sudo mkdir -p /data/docker/volume/lnmp/var/log/{mysql,nginx,php-fpm} /data/docker/volume/lnmp/var/lib/mysql /data/docker/volume/lnmp/data/web /data/docker/volume/lnmp/var/lock/docker /data/docker/volume/lnmp/root
+sudo touch /data/docker/volume/lnmp/root/.mylogin.cnf
 sudo chmod -R 777 /data/docker/volume/lnmp/var/log/{mysql,nginx,php-fpm} /data/docker/volume/lnmp/var/lib/mysql /data/docker/volume/lnmp/var/lock/docker /data/docker/volume/lnmp/root/.mylogin.cnf
 ```
 
