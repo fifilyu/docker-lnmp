@@ -30,8 +30,10 @@ mkdir -p /data/web /var/log/{mysql,nginx,php-fpm}
 
 # 使用容器内部的用户组重置目录权限：解决容器启动映射卷导致的宿主权限和容器权限不同步问题
 chown -R apache:apache /data/web /var/log/php-fpm
-chown -R mysql:mysql /var/log/mysql
+chown -R mysql:mysql /var/log/mysql /root/.mylogin.cnf
 chown -R nginx:nginx /var/log/nginx
+
+chmod 600 /root/.mylogin.cnf
 
 # 为支持容器映射目录，只在启动时初始化数据目录
 # --initialize-insecure 参数：root用户空密码

@@ -21,7 +21,7 @@ docker buildx build -t fifilyu/lnmp:latest .
 
 ```bash
 sudo mkdir -p /data/docker/volume/lnmp/var/log/{mysql,nginx,php-fpm} /data/docker/volume/lnmp/var/lib/mysql /data/docker/volume/lnmp/data/web /data/docker/volume/lnmp/var/lock/docker
-sudo chmod -R 777 /data/docker/volume/lnmp/var/log/{mysql,nginx,php-fpm} /data/docker/volume/lnmp/var/lib/mysql /data/docker/volume/lnmp/var/lock/docker
+sudo chmod -R 777 /data/docker/volume/lnmp/var/log/{mysql,nginx,php-fpm} /data/docker/volume/lnmp/var/lib/mysql /data/docker/volume/lnmp/var/lock/docker /data/docker/volume/lnmp/root/.mylogin.cnf
 ```
 
 ### 3.2 启动带目录映射的容器
@@ -46,6 +46,7 @@ docker run -d \
     -v /data/docker/volume/lnmp/var/log/mysql:/var/log/mysql \
     -v /data/docker/volume/lnmp/var/log/php-fpm:/var/log/php-fpm \
     -v /data/docker/volume/lnmp/var/lock/docker:/var/lock/docker \
+    -v /data/docker/volume/lnmp/root/.mylogin.cnf:/root/.mylogin.cnf \
     -h lnmp \
     --name lnmp \
     fifilyu/lnmp:latest
