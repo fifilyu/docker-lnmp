@@ -1,0 +1,29 @@
+#
+# This group are read by MySQL server.
+# Use it for options that only the server (but not clients) should see
+#
+# For advice on how to change settings please see
+# http://dev.mysql.com/doc/refman/en/server-configuration-defaults.html
+
+# Settings user and group are ignored when systemd is used.
+# If you need to run mysqld under a different user or group,
+# customize your systemd unit file for mysqld according to the
+# instructions in http://fedoraproject.org/wiki/Systemd
+
+[mysqld]
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+log-error=/var/log/mysql/mysqld.log
+pid-file=/run/mysqld/mysqld.pid
+default-storage-engine=InnoDB
+disabled_storage_engines="MyISAM"
+bind-address=0.0.0.0
+max_connections=1000
+general_log=off
+general_log_file=/var/log/mysql/general.log
+long_query_time=3
+slow_query_log=on
+slow_query_log_file=/var/log/mysql/slow_query.log
+mysqlx=0
+skip-name-resolve=OFF
+sql_mode=""
