@@ -77,6 +77,7 @@ else
 
     if [ $? -eq 0 ]; then
         echo "$(date "+%Y-%m-%d %H:%M:%S") [信息] MySQL无密码设置成功"
+        echo $(date "+%Y-%m-%d %H:%M:%S") >${LOCK_FILE}
     else
         echo "$(date "+%Y-%m-%d %H:%M:%S") [错误] MySQL无密码设置失败"
         exit 1
