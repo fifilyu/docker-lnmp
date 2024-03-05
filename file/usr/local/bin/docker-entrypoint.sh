@@ -96,7 +96,7 @@ else
 fi
 
 mkdir -p /run/php-fpm
-/usr/sbin/php-fpm -c /etc/php-fpm.conf
+/usr/sbin/php-fpm -y /etc/php-fpm.conf -c /etc/php.ini
 
 if [ $? -eq 0 ]; then
     echo "$(date "+%Y-%m-%d %H:%M:%S") [信息] php-fpm启动成功"
