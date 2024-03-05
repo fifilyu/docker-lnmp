@@ -98,6 +98,8 @@ fi
 mkdir -p /run/php-fpm
 /usr/sbin/php-fpm -y /etc/php-fpm.conf -c /etc/php.ini
 
+/usr/bin/redis-server /etc/redis/redis.conf
+
 if [ $? -eq 0 ]; then
     echo "$(date "+%Y-%m-%d %H:%M:%S") [信息] php-fpm启动成功"
 else
